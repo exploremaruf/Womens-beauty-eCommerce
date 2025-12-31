@@ -1,6 +1,9 @@
 package com.maruf.womenbeauty;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    LinearLayout clothing_section, jewelry_section, shoes_section, makeup_section;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,50 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        clothing_section = findViewById(R.id.clothing_section);
+        jewelry_section = findViewById(R.id.jewelry_section);
+        shoes_section = findViewById(R.id.shoes_section);
+        makeup_section = findViewById(R.id.makeup_section);
+
+        //**************************************************************************************
+        //**************************************************************************************
+
+        clothing_section.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Products.class);
+                intent.putExtra("category", "clothing");
+            }
+        });
+        jewelry_section.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Products.class);
+                intent.putExtra("category", "jewelry");
+            }
+        });
+        shoes_section.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Products.class);
+                intent.putExtra("category", "shoes");
+            }
+        });
+        makeup_section.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Products.class);
+                intent.putExtra("category", "makeup");
+            }
+        });
 
     }
 
