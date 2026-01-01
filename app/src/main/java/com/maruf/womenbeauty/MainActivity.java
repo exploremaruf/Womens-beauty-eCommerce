@@ -12,8 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
-    LinearLayout clothing_section, jewelry_section, shoes_section, makeup_section;
+    LinearLayout clothing_section,jewelry_section,shoes_section,makeup_section;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        clothing_section = findViewById(R.id.clothing_section);
-        jewelry_section = findViewById(R.id.jewelry_section);
-        shoes_section = findViewById(R.id.shoes_section);
-        makeup_section = findViewById(R.id.makeup_section);
+        clothing_section =findViewById(R.id.clothing_section);
+        jewelry_section =findViewById(R.id.jewelry_section);
+        shoes_section =findViewById(R.id.shoes_section);
+        makeup_section =findViewById(R.id.makeup_section);
 
         //**************************************************************************************
         //**************************************************************************************
@@ -41,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Products.class);
-                intent.putExtra("category", "clothing");
+                Intent intent= new Intent(MainActivity.this,Products.class);
+                intent.putExtra("category","clothing");
+                startActivity(intent);
             }
         });
         jewelry_section.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Products.class);
-                intent.putExtra("category", "jewelry");
+                Intent intent= new Intent(MainActivity.this,Products.class);
+                intent.putExtra("category","jewelry");
+                startActivity(intent);
             }
         });
         shoes_section.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Products.class);
-                intent.putExtra("category", "shoes");
+                Intent intent= new Intent(MainActivity.this,Products.class);
+                intent.putExtra("category","shoes");
+                startActivity(intent);
             }
         });
         makeup_section.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +70,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Products.class);
-                intent.putExtra("category", "makeup");
+                Intent intent= new Intent(MainActivity.this,Products.class);
+                intent.putExtra("category","makeup");
+                startActivity(intent);
             }
         });
+
+
+
+
+
+
 
     }
 
